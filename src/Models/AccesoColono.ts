@@ -1,3 +1,13 @@
-import { Schema } from "mongoose";
+import { Schema , model } from "mongoose";
 
-export default class
+const accesoColonoSchema = new Schema({
+    idColono : Number,
+    nombreColono : String,
+    Ingreso: Boolean,
+    fechayHoraAcceso: Date,
+    direccion : String
+});
+
+const AccesoColono = model('accesoColono',accesoColonoSchema);
+
+export default AccesoColono;

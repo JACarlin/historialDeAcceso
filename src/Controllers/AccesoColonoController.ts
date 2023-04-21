@@ -6,7 +6,7 @@ interface registrarAccesoColono {
     idColono : Number,
     nombreColono : String,
     ingreso: Boolean,
-    fechayHoraAcceso: Date,
+    fechayHoraAcceso: String,
     direccion : String
 }
 
@@ -35,9 +35,11 @@ export default class AccesoColonoController extends Controller {
                 return;
             }
 
-            const accesoColono = new AccesoColono( idColono, nombreColono, fechayHoraAcceso, direccion, ingreso );
+            const accesoColono = new AccesoColono( {idColono, nombreColono, ingreso, fechayHoraAcceso, direccion} );
 
             accesoColono.save();
+        } catch(e) {
+            console.error(e);
         }
     }
 }

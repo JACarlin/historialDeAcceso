@@ -5,7 +5,7 @@ const visitaSchema = new Schema({
     nombreColono: String,
     nombreVisita: String,
     ingresa: Boolean,
-    fechaYHoraAcceso: Date,
+    fechaYHoraAcceso: String,
     direccion: String
 });
 

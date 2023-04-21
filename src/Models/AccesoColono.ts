@@ -4,10 +4,10 @@ const accesoColonoSchema = new Schema({
     idColono : Number,
     nombreColono : String,
     Ingreso: Boolean,
-    fechayHoraAcceso: Date,
+    fechayHoraAcceso: String,
     direccion : String
 });
 
-const AccesoColono = model('accesoColono',accesoColonoSchema);
+const AccesoColono = model('accesoColono', accesoColonoSchema);
 
 export default AccesoColono;

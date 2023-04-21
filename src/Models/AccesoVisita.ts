@@ -7,7 +7,8 @@ const visitaSchema = new Schema({
     ingresa: Boolean,
     fechaYHoraAcceso: Date,
     direccion: String
-})
+});
+
 const Visita = model('visita', visitaSchema);
 
 export default Visita;

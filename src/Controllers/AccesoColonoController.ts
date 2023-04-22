@@ -16,7 +16,7 @@ export default class AccesoColonoController extends Controller {
     }
 
     protected initializeRouter(): void {
-        this.router.post('/registrar');
+        this.router.post('/registrar', this.registrar);
     }
 
     private async registrar(req: Request, res: Response) {

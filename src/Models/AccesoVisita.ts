@@ -6,7 +6,7 @@ const visitaSchema = new Schema({
     nombreVisita: String,
     ingresa: Boolean,
     fechaYHoraAcceso: String,
-    direccion: String
+    direccionColono: String
 });
 
 const Visita = model('visita', visitaSchema);

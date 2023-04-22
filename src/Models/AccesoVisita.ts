@@ -9,6 +9,6 @@ const visitaSchema = new Schema({
     direccionColono: String
 });
 
-const Visita = model('visita', visitaSchema);
+const Visita = model('accesovisita', visitaSchema);
 
 export default Visita;

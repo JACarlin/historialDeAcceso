@@ -6,6 +6,7 @@ export default class AppBuilder {
 
   public constructor() {
     this.app = express();
+    this.app.use(express.json());
   }
   public getApp(): Application {
     return this.app;

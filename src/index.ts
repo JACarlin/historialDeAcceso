@@ -2,10 +2,17 @@ import mongoose from 'mongoose';
 import app from './app';
 
 async function connectMongoose() {
-    await mongoose.connect('mongodb://localhost:27017/ControlHistorial');
+    await mongoose.connect('mongodb://127.0.0.1:27017/controlhistorial');
   }
 
-connectMongoose();
+(async function () {
+    try {
+    await connectMongoose();
+    console.log('Connected')
+    } catch (e) {
+        console.error(e);
+    }
+})();
 
 const port = 3001;
 

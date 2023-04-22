@@ -30,14 +30,18 @@ export default class AccesoColonoController extends Controller {
                 direccion 
             } = <registrarAccesoColono>req.body;
 
-            if (!idColono || !nombreColono || !ingreso || !fechayHoraAcceso || !direccion) {
+            console.log(typeof ingreso)
+
+            if (!idColono || !nombreColono || typeof ingreso != 'boolean' || !fechayHoraAcceso || !direccion) {
                 res.status(400).end('Falta algún atributo');
                 return;
             }
 
             const accesoColono = new AccesoColono( {idColono, nombreColono, ingreso, fechayHoraAcceso, direccion} );
 
-            accesoColono.save();
+            console.log(idColono, nombreColono, ingreso, fechayHoraAcceso, direccion)
+
+            await accesoColono.save();
         } catch(e) {
             console.error(e);
         }

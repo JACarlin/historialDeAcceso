@@ -1,14 +1,14 @@
 import { Schema, model} from 'mongoose';
 
-const visitaSchema = new Schema({
-    idColono:Number,
+const accesoVisitaSchema = new Schema({
+    idColono: Number,
     nombreColono: String,
     nombreVisita: String,
-    ingresa: Boolean,
+    ingreso: Boolean,
     fechaYHoraAcceso: String,
     direccionColono: String
 });
 
-const Visita = model('accesovisita', visitaSchema);
+const AccesoVisita = model('accesovisita', accesoVisitaSchema);
 
-export default Visita;
+export default AccesoVisita;

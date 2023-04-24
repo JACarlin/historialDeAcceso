@@ -28,7 +28,7 @@ export default class AccesoColonoController extends Controller {
                 ingreso, 
                 fechayHoraAcceso, 
                 direccion 
-            } = await <registrarAccesoColono>req.body;
+            } = <registrarAccesoColono>req.body;
 
             console.log(typeof ingreso)
 

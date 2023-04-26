@@ -42,6 +42,8 @@ export default class AccesoColonoController extends Controller {
             console.log(idColono, nombreColono, ingreso, fechayHoraAcceso, direccion)
 
             await accesoColono.save();
+
+            return res.status(200).json();
         } catch(e) {
             console.error(e);
         }

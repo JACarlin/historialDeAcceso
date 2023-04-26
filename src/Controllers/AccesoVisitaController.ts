@@ -49,6 +49,8 @@ export default class AccesoVisitaController extends Controller {
             const accesoVisita = new AccesoVisita( {idColono, nombreColono, nombreVisita, ingreso, fechayHoraAcceso, direccionColono} );
 
             await accesoVisita.save();
+
+            res.status(200).json();
         } catch(e) {
             console.error(e);
         }

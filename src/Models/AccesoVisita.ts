@@ -1,12 +1,8 @@
 import { Schema, model} from 'mongoose';
 
 const accesoVisitaSchema = new Schema({
-    idColono: Number,
-    nombreColono: String,
-    nombreVisita: String,
-    ingreso: Boolean,
-    fechaYHoraAcceso: String,
-    direccionColono: String
+    idVisita: Number,
+    fechaYHoraAcceso: String
 });
 
 const AccesoVisita = model('accesovisita', accesoVisitaSchema);

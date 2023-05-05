@@ -3,12 +3,8 @@ import AccesoVisita from '../Models/AccesoVisita';
 import Controller from './Controller';
 
 interface registrarAccesoVisita {
-    idColono: Number;
-    nombreColono: String;
-    nombreVisita: String;
-    ingreso: Boolean;
-    fechayHoraAcceso: String;
-    direccionColono: String;
+    idVisita: Number;
+    fechaYHoraAcceso: String;
 }
 
 export default class AccesoVisitaController extends Controller {
@@ -24,29 +20,16 @@ export default class AccesoVisitaController extends Controller {
         try 
         {
             const { 
-                idColono, 
-                nombreColono,
-                nombreVisita,
-                ingreso, 
-                fechayHoraAcceso, 
-                direccionColono
+                idVisita,
+                fechaYHoraAcceso,
             } = <registrarAccesoVisita>req.body;
 
-            console.log(typeof ingreso)
-
-            console.log(idColono, 
-                nombreColono,
-                nombreVisita,
-                ingreso, 
-                fechayHoraAcceso, 
-                direccionColono)
-
-            if (!idColono || !nombreColono || !nombreVisita || typeof ingreso != 'boolean' || !fechayHoraAcceso || !direccionColono) {
+            if (!idVisita || !fechaYHoraAcceso) {
                 res.status(400).end('Falta algún atributo');
                 return;
             }
 
-            const accesoVisita = new AccesoVisita( {idColono, nombreColono, nombreVisita, ingreso, fechayHoraAcceso, direccionColono} );
+            const accesoVisita = new AccesoVisita( {idVisita, fechaYHoraAcceso} );
 
             await accesoVisita.save();
 
